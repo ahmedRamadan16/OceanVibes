@@ -1,0 +1,53 @@
+*{
+    @include prefixer(box-sizing,border-box,("o","webkit","moz"));
+    margin: 0;
+    padding: 0;
+}
+%row{
+    position: relative;
+    display: grid;
+    background-color: #f1f2f3;
+    padding: 1rem;
+    gap: 1rem;
+}
+%close{
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    >div{
+        transition: .3s ease-in;
+        gap: 1rem;
+        display: flex;
+        align-items: center;
+        color: $gray-color;
+        &:hover
+        {
+            color: $main-color;
+        }
+    }
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    
+    @include breakBoints(Small)
+    {
+            width: 750px;
+    }
+    
+    @include breakBoints(Medium)
+    {
+            width: 970px;
+    }
+    
+    @include breakBoints(Large)
+    {
+        width: 1170px;
+    }
+    
+ 
+}

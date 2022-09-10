@@ -1,0 +1,44 @@
+@mixin  breakBoints($point) {
+   /*Small*/
+   @if $point == Mobile{
+    @media (max-width:767px) {
+        @content;
+    }
+   }@else if $point == Tablet 
+   {
+    @media (max-width:991px) {
+        @content;
+    }
+   }
+   @else if $point == Small
+   {
+@media (min-width:768px)
+{
+   @content;
+}
+   }
+   @else if $point == Medium
+   {
+/*Medium*/
+@media (min-width:992px)
+{
+   @content;
+}
+   }
+   @else if $point == Large
+   {
+
+/*Large*/
+@media (min-width:1200px)
+{
+   @content;
+}
+   }
+}
+@mixin  prefixer($property,$value,$prefixes:()) {
+   @each $prefix in $prefixes {
+      #{"-"+ $prefix +"-"+$property}:$value;
+   }
+   #{$property}:$value;
+   
+}
